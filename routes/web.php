@@ -16,6 +16,7 @@ Route::middleware('auth')->group(function () {
 
     // —— Bookclubs ——
     Route::get('/bookclubs', [BookclubController::class, 'index'])->name('bookclubs');
+    Route::get('/bookclubs/{id}', [BookclubController::class, 'show'])->name('bookclubs.show');
 
     // —— Profile ——
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

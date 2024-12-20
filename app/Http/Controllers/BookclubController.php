@@ -12,5 +12,14 @@ class BookclubController extends Controller
         return view('bookclubs', [
             'bookclubs' => $bookclubs
         ]);
+
+    }
+
+    public function show($id){
+        $bookclub = Bookclub::findOrFail($id);
+
+        return view('bookclub-detail', [
+            'bookclub' => $bookclub
+        ]);
     }
 }

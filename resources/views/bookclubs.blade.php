@@ -14,12 +14,14 @@
 
             <div>
                 @foreach ($bookclubs as $bookclub)
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4">
-                        <div class="p-6 text-gray-900">
-                            <h2 class="text-xl font-semibold">{{ $bookclub->title }}</h2>
-                            <p>{{ $bookclub->description }}</p>
+                    <a href="{{ route('bookclubs.show', $bookclub) }}">
+                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4">
+                            <div class="p-6 text-gray-900">
+                                <h2 class="text-xl font-semibold">{{ $bookclub->title }}</h2>
+                                <p>{{ $bookclub->description }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>
