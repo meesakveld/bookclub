@@ -14,14 +14,24 @@
 
             <div>
                 @foreach ($bookclubs as $bookclub)
-                    <a href="{{ route('bookclubs.show', $bookclub) }}">
-                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4">
-                            <div class="p-6 text-gray-900">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4 flex justify-between items-center p-6">
+                        <a href="{{ route('bookclubs.show', $bookclub) }}">
+                            <div class="text-gray-900">
                                 <h2 class="text-xl font-semibold">{{ $bookclub->title }}</h2>
                                 <p>{{ $bookclub->description }}</p>
                             </div>
+                        </a>
+                        <div class="text-white px-4 py-2 rounded-md {{ $bookclub->users->contains(auth()->user()) ? 'bg-gray-300' : 'bg-blue-500' }}">
+                            @if (!$bookclub->users->contains(auth()->user()))
+                                <form action="{{ route('bookclubs.join', $bookclub) }}" method="POST">
+                                    @csrf
+                                    <button type="submit">Join</button>
+                                </form>
+                            @else
+                                <p>Joined</p>
+                            @endif
                         </div>
-                    </a>
+                    </div>
                 @endforeach
             </div>
         </div>
