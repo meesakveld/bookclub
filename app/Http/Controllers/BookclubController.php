@@ -29,10 +29,12 @@ class BookclubController extends Controller
     }
 
     // —— Actions ——
-    public function join($bookclub){
-        $user = auth()->user();
-        $user->bookclubs()->attach($bookclub);
+    public function join($id){
+        $userId = auth()->user()->id;
+        $bookclub = Bookclub::findOrFail($id);
 
-        return redirect()->route('bookclubs');
+        $bookclub->users()->attach($userId);
+
+        return redirect()->route('bookclubs.show', $id);
     }
 }
