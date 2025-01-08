@@ -10,7 +10,7 @@
             <nav class="flex gap-2">
                 <a href="{{ route('bookclubs') }}" class="text-green-800 font-bold">Bookclubs</a>
                 <span>/</span>
-                <span>{{ $bookclub->title }}</span>
+                <a href="{{ route('bookclubs.show', $bookclub->id) }}" class="text-green-800 font-bold">{{ $bookclub->title }}</a>
                 <span>/</span>
                 <span>Create a new post</span>
             </nav>

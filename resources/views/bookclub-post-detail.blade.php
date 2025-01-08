@@ -29,13 +29,15 @@
                             <p class="text-lg">{{ $post->user->name ?? 'Unknown' }}</p>
                         </div>
 
-                        <form
-                            action="{{ route('bookclubs.post.destroy', ['id' => $post->bookclub->id, 'bookPostId' => $post->id]) }}"
-                            method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white rounded-lg py-2 px-4">Delete</button>
-                        </form>
+                        @if ($post->user->id === auth()->id())
+                            <form
+                                action="{{ route('bookclubs.post.destroy', ['id' => $post->bookclub->id, 'bookPostId' => $post->id]) }}"
+                                method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white rounded-lg py-2 px-4">Delete</button>
+                            </form>
+                        @endif
                     </aside>
 
                     <article class="md:w-2/3 flex flex-col gap-12">
