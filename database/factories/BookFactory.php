@@ -19,7 +19,7 @@ class BookFactory extends Factory
         return [
             'title' => fake()->company(),
             'description' => fake()->paragraph(),
-            'image_url' => "books/book-" . fake()->numberBetween(1, 12) . ".jpg",
+            'image_url' => "books/book-" . fake()->numberBetween(1, 8) . ".jpg",
             'author_id' => fake()->numberBetween(1, 500),
             'published_at' => fake()->date(),
         ];
