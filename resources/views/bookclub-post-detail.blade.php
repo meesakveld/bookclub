@@ -53,29 +53,31 @@
                                     class="bg-green-500 text-white rounded-lg p-2 mt-2">Submit</button>
                             </form>
 
-                            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4 p-6 flex flex-col gap-6">
-                                @foreach ($comments as $comment)
-                                    <div>
-                                        <div class="flex flex-col gap-2">
-                                            <p class="font-semibold">{{ $comment->user->name ?? 'Unknown' }}</p>
-                                            <p>{{ $comment->content }}</p>
-                                            <p class="text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
+                            @if (!$comments->isEmpty())
+                                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4 p-6 flex flex-col gap-6">
+                                    @foreach ($comments as $comment)
+                                        <div>
+                                            <div class="flex flex-col gap-2">
+                                                <p class="font-semibold">{{ $comment->user->name ?? 'Unknown' }}</p>
+                                                <p>{{ $comment->content }}</p>
+                                                <p class="text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
 
-                                            @if ($comment->user->id === auth()->id())
-                                                <form
-                                                    action="{{ route('bookclubs.post.comment.delete', ['id' => $post->bookclub->id, 'bookPostId' => $post->id, 'commentId' => $comment->id]) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit"
-                                                        class="bg-red-500 text-white rounded-lg px-4 mt-2">Delete</button>
-                                                </form>
-                                            @endif
+                                                @if ($comment->user->id === auth()->id())
+                                                    <form
+                                                        action="{{ route('bookclubs.post.comment.delete', ['id' => $post->bookclub->id, 'bookPostId' => $post->id, 'commentId' => $comment->id]) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="bg-red-500 text-white rounded-lg px-4 mt-2">Delete</button>
+                                                    </form>
+                                                @endif
+                                            </div>
+
                                         </div>
-
-                                    </div>
-                                @endforeach
-                            </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </section>
                     </article>
                 </div>
