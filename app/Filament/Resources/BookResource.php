@@ -12,8 +12,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -53,6 +51,7 @@ class BookResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')->label('Title'),
+                TextColumn::make('published_at')->label('Published At')
             ])
             ->filters([
                 //
