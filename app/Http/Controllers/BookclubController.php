@@ -77,7 +77,6 @@ class BookclubController extends Controller
         return redirect()->route('bookclubs.post', [$id, $bookPostId]);
     }
 
-    // ?commentId=1
     public function commentDelete($id, $bookPostId){
         $commentId = request('commentId');
         

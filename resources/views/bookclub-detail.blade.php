@@ -24,7 +24,11 @@
                 </article>
 
                 <article>
-                    <h2 class="text-xl font-medium mt-4">Books in this bookclub</h2>
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-medium mt-4">Booksreviews in this bookclub</h2>
+                        <a href="{{ route('bookclubs.post.create', $bookclub->id) }}" class="bg-green-500 text-white font-semibold p-2 rounded-md">Create a new post</a>
+                    </div>
+                    
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         @foreach ($posts as $post)
                             <a href="{{ route('bookclubs.post', ['id' => $bookclub->id, 'bookPostId' => $post->id]) }}">
