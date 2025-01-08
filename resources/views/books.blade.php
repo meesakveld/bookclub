@@ -13,18 +13,14 @@
             </div>
 
             <form action="{{ route('books') }}" method="GET" class="flex gap-2">
-                <input type="text" name="search" id="search" class="p-2 border border-gray-300 rounded-md" placeholder="Search for a book" value="{{ $search }}">
+                <input type="text" name="search" id="search" class="p-2 border border-gray-300 rounded-md"
+                    placeholder="Search for a book" value="{{ $search }}">
                 <button type="submit" class="bg-green-500 text-white font-semibold p-2 rounded-md">Search</button>
             </form>
 
             <div class="my-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 @foreach ($books as $book)
-                    <div class="bg-white p-6 flex flex-col gap-4 rounded-lg">
-                        <img src="{{ asset('storage/' . $book->image_url) }}" alt="{{ $book->title }}" class="w-full rounded-lg">
-                        <h2 class="text-xl font-semibold">{{ $book->title }}</h2>
-                        <p>{{ $book->description }}</p>
-                        <p class="text-gray-500">Publishing date: {{ $book->published_at }}</p>
-                    </div>
+                    <x-book-card :book="$book" />
                 @endforeach
             </div>
 
