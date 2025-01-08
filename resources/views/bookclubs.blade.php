@@ -8,8 +8,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-col gap-4">
             <div>
-                <h3 class="text-xl font-medium">Alle bookclubs</h3>
-                <p>Op deze pagina vind je alle bookclubs die er zijn.</p>
+                <h3 class="text-xl font-medium">All bookclubs</h3>
+                <p>On this page you will find all bookclubs that are available.</p>
             </div>
 
             <div>
