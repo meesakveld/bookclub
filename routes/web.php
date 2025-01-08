@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
 
         // —— Bookclubs posts ——
         Route::get('/bookclubs/{id}/posts/{bookPostId}', [BookclubController::class, 'post'])->name('bookclubs.post');
+        Route::post('/bookclubs/{id}/posts/{bookPostId}', [BookclubController::class, 'comment'])->name('bookclubs.post.comment');
+        Route::delete('/bookclubs/{id}/posts/{bookPostId}', [BookclubController::class, 'commentDelete'])->name('bookclubs.post.comment.delete');
 
     // —— Books ——
     Route::get('/books', [BookController::class, 'index'])->name('books');
