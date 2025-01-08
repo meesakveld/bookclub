@@ -30,4 +30,12 @@ class BookController extends Controller
 
     }
 
+    // —— API ——
+    public function all()
+    {
+        $books = Book::all();
+
+        return response()->json($books);
+    }
+
 }

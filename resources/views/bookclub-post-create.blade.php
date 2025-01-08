@@ -25,9 +25,6 @@
                         <label for="title" class="font-semibold">Book</label>
                         <select name="book_id" id="book_id" class="p-2 border border-gray-300 rounded-md" required>
                             <option value="">Select a book</option>
-                            @foreach ($books as $book)
-                                <option value="{{ $book->id }}">{{ $book->title }}</option>
-                            @endforeach
                         </select>
                     </div>
 
@@ -41,4 +38,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const searchInput = document.getElementById('book_id');
+        const searchUrl = '/api/books';
+
+        const books = fetch(searchUrl)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(book => {
+                    const option = document.createElement('option');
+                    option.value = book.id;
+                    option.text = book.title;
+
+                    searchInput.appendChild(option);
+                });
+            });
+    </script>
 </x-layouts.app>
