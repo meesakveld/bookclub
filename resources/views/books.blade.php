@@ -30,9 +30,14 @@
 
             <div class="flex justify-center">
                 <div class="flex gap-2">
-                    <a href="{{ route('books', ['page' => $page - 1, 'search' => $search]) }}" class="bg-green-500 text-white font-semibold p-2 rounded-md {{$page == 1 ? 'opacity-50 pointer-events-none cursor-not-allowed' : ''}}">Previous page</a>
-                    <span class="font-semibold p-2 rounded-md">{{$page}}/{{ceil($total_books / $per_page) == 0 ? 1 : ceil($total_books / $per_page)}}</span>
-                    <a href="{{ route('books', ['page' => $page + 1, 'search' => $search]) }}" class="bg-green-500 text-white font-semibold p-2 rounded-md {{$page == ceil($total_books / $per_page) ? 'opacity-50 pointer-events-none cursor-not-allowed' : ''}}">Next page</a>
+                    <a href="{{ route('books', ['page' => $page - 1, 'search' => $search]) }}"
+                        class="bg-green-500 text-white font-semibold p-2 rounded-md {{$page == 1 ? 'opacity-50 pointer-events-none cursor-not-allowed' : ''}}">Previous
+                        page</a>
+                    <span
+                        class="font-semibold p-2 rounded-md">{{$page}}/{{ceil($total_books / $per_page) == 0 ? 1 : ceil($total_books / $per_page)}}</span>
+                    <a href="{{ route('books', ['page' => $page + 1, 'search' => $search]) }}"
+                        class="bg-green-500 text-white font-semibold p-2 rounded-md {{$page == ceil($total_books / $per_page) ? 'opacity-50 pointer-events-none cursor-not-allowed' : ''}}">Next
+                        page</a>
                 </div>
             </div>
         </div>
