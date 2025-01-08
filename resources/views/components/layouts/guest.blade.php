@@ -6,6 +6,18 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <meta name="description" content="Bookclubs provides a place for bookclub communities to share their book reviews and thoughts.">
+        
+        <meta property="og:title" content="{{ config('app.name', 'Laravel') }}" />
+        <meta property="og:description" content="Bookclubs provides a place for bookclub communities to share their book reviews and thoughts." />
+
+        <meta name="twitter:title" content="{{ config('app.name', 'Laravel') }}" />
+        <meta name="twitter:description" content="Bookclubs provides a place for bookclub communities to share their book reviews and thoughts." />
+        <meta name="twitter:url" content="{{ url()->current() }}" />
+
+        <link rel="canonical" href="{{ url()->current() }}" />
+
+        <meta name="robots" content="index, follow" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

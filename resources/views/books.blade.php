@@ -1,14 +1,14 @@
 <x-layouts.app>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Books') }}
-        </h2>
+        </h1>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-col gap-4">
             <div>
-                <h3 class="text-xl font-medium">All books</h3>
+                <h2 class="text-xl font-medium">All books</h2>
                 <p>On this page you will find all books that are available.</p>
             </div>
 

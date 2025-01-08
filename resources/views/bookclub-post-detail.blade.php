@@ -1,8 +1,8 @@
 <x-layouts.app>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ $post->book->title }}
-        </h2>
+        </h1>
     </x-slot>
 
     <div class="py-12">
@@ -17,7 +17,7 @@
             </nav>
 
             <div class="flex flex-col gap-8">
-                <h1 class="text-2xl font-semibold">{{ $post->book->title }}</h1>
+                <h2 class="text-2xl font-semibold">{{ $post->book->title }}</h2>
 
                 <div class="flex gap-12 max-md:flex-col">
                     <aside class="flex flex-col gap-4 md:w-1/3">

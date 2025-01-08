@@ -1,8 +1,8 @@
 <x-layouts.app>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
             Create a new post for {{ $bookclub->title }}
-        </h2>
+        </h1>
     </x-slot>
 
     <div class="py-12">
@@ -16,7 +16,7 @@
             </nav>
 
             <div class="flex flex-col gap-8">
-                <h1 class="text-2xl font-semibold">Create a new post for {{ $bookclub->title }}</h1>
+                <h2 class="text-2xl font-semibold">Create a new post for {{ $bookclub->title }}</h2>
 
                 <form action="{{ route('bookclubs.post.create.store', $bookclub->id) }}" method="POST" class="flex flex-col gap-4">
                     @csrf
