@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookclubPost extends Model
 {
-    // use HasFactory;
+    use HasFactory;
 
     protected $fillable = [
         "content",   

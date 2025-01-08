@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\BookclubPost;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
 
         // Book::truncate();
         // Book::factory()->count(600)->create();
+        // BookclubPost::factory()->count(75)->create();
     }
 }
