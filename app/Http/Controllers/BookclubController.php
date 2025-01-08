@@ -43,7 +43,7 @@ class BookclubController extends Controller
         }
 
         // —— Get the post data ——
-        $post = BookclubPost::findOrFail($bookPostId)->load('book', 'user');
+        $post = BookclubPost::findOrFail($bookPostId)->load('book', 'user', 'bookclub');
 
         // —— Get the post comments ——
 
