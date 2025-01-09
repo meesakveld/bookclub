@@ -10,13 +10,15 @@ Route::get('/', function () {
     return redirect('/dashboard');
 });
 
-Route::middleware('auth')->group(function () {
-    // —— Dashboard ——
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// —— Dashboard ——
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-    
+// —— Books ——
+Route::get('/books', [BookController::class, 'index'])->name('books');
+
+Route::middleware('auth')->group(function () {
     // —— Bookclubs ——
     Route::get('/bookclubs', [BookclubController::class, 'index'])->name('bookclubs');
     Route::get('/bookclubs/{id}', [BookclubController::class, 'show'])->name('bookclubs.show');
@@ -31,14 +33,10 @@ Route::middleware('auth')->group(function () {
     // Read
     Route::get('/bookclubs/{id}/posts/{bookPostId}', [BookclubPostController::class, 'index'])->name('bookclubs.post');
     Route::delete('/bookclubs/{id}/posts/{bookPostId}', [BookclubPostController::class, 'destroy'])->name('bookclubs.post.destroy');
-    
+
     // Comment
     Route::post('/bookclubs/{id}/posts/{bookPostId}/comment', [BookclubPostController::class, 'comment'])->name('bookclubs.post.comment');
     Route::delete('/bookclubs/{id}/posts/{bookPostId}/comment', [BookclubPostController::class, 'commentDelete'])->name('bookclubs.post.comment.delete');
-
-
-    // —— Books ——
-    Route::get('/books', [BookController::class, 'index'])->name('books');
 
     // —— Profile ——
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -49,4 +47,4 @@ Route::middleware('auth')->group(function () {
 // —— API ——
 Route::get('/api/books', [BookController::class, 'all']);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
