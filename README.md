@@ -1,3 +1,5 @@
+![Banner](.github/banner.png)
+
 # Bookclub
 
 ## What is Bookclub?
