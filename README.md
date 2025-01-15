@@ -43,6 +43,45 @@ I've made a platform for book lovers. The platform is called Bookclub. On this p
 
 <br>
 
+## Installation
+
+1. Clone the repository
+```bash
+git clone {repository URL}
+```
+
+2. Install Composer dependencies (using DDEV)
+```bash
+ddev composer install
+```
+
+3. Install NPM dependencies
+```bash
+ddev npm install
+```
+
+4. Add a `.env` file
+```bash
+cp .env.example .env
+```
+
+5. Generate an application key
+```bash
+ddev php artisan key:generate
+```
+
+6. Migrate the database
+```bash
+ddev php artisan migrate
+```
+
+7. Seed the database using the db.sql file in the root of the project
+   
+8. Start the server
+```bash
+ddev start
+```
+
 ## License
 This project is distributed under the [MIT License](LICENSE).
 
