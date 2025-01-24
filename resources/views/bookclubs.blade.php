@@ -14,7 +14,7 @@
 
             <div>
                 @foreach ($bookclubs as $bookclub)
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4 flex justify-between items-center p-6">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-4 flex justify-between max-md:flex-col items-baseline max-md:gap-2 md:items-center p-6">
                         <a href="{{ route('bookclubs.show', $bookclub) }}">
                             <div class="text-gray-900">
                                 <h2 class="text-xl font-semibold">{{ $bookclub->title }}</h2>
