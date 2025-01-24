@@ -5,7 +5,7 @@
         </h1>
     </x-slot>
 
-    <div class="py-12 max-w-7xl mx-auto p-6 flex flex-col gap-12">
+    <div class="py-12 max-w-7xl mx-auto md:p-8 flex flex-col gap-12">
         <div>
             <h2 class="text-2xl font-semibold">Welkom!</h2>
             <p>Magna ut ipsum cillum elit mollit dolor laborum pariatur eu ut adipisicing esse laborum. Fugiat aliquip
