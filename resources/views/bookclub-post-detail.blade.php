@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex flex-col gap-6">
-            <nav class="flex gap-2">
+            <nav class="flex flex-wrap gap-2">
                 <a class="text-green-800 font-bold" href="{{ route('bookclubs') }}">Bookclubs</a>
                 <span>/</span>
                 <a class="text-green-800 font-bold"
